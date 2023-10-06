@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>project2</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>view</title>
   </head>
   <link rel="stylesheet" href="mycss.css" />
-
+  <script>
+   function deleteNotice(){
+        window.alert("게시물을 삭제할까요?");
+   }
+  </script>
   <body>
     <div class="header">
       <h1>실전 프로젝트</h1>
@@ -18,11 +23,13 @@
       <a href="#">Example</a>
       <a href="#">About</a>
     </div>
-
-    <div class="row">
-      <div class="main" onclick="location.href=`view.html`">
+    <div class="mainView" onclick="location.href=`view.html`">
         <h2>공지사항 1입니다</h2>
         <h5>작성일자: 2023년 9월 27일</h5>
+        <div class="buttonSection">
+            <button type="button" onclick="location.href=`edit.html`">수정</button>
+            <button onclick="deleteNotice()">삭제</button>
+        </div>
         <div class="noticeContent" style="height: 200px">
           공지사항 내용입니다. 공지사항 내용입니다. 공지사항 내용입니다.
           공지사항 내용입니다. 공지사항 내용입니다. 공지사항 내용입니다.
@@ -32,15 +39,5 @@
           공지사항 내용입니다. 공지사항 내용입니다. 공지사항 내용입니다.
           공지사항 내용입니다.
         </div>
-
-        <br />
-      </div>
-      </div>
-    </div>
-
-
-    <div class="footer">
-      <h2>Footer</h2>
-    </div>
   </body>
 </html>
