@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>edit</title>
   </head>
+  <script>
+    function deleteNotice() {
+      window.alert("게시물을 삭제할까요?");
+    }
+  </script>
   <link rel="stylesheet" href="mycss.css" />
   <body>
     <div class="header">
@@ -18,5 +23,23 @@
       <a href="#">Example</a>
       <a href="#">About</a>
     </div>
+
+    <form class="mainView" action="saveChanges.php" method="post">
+      제목: <input type="text" name="title" value="공지사항 1입니다" />
+      <p>작성일자: 2023년 9월 27일</p>
+      수정일자:
+      <input type="datetime-local" name="date" />
+      <div class="buttonSection">
+        <button
+          type="submit"
+          onclick="event.stopPropagation(); location.href='view.html'">
+          저장
+        </button>
+        <button type="button" onclick="deleteNotice()">삭제</button>
+      </div>
+      <textarea name="noticeContent" style="height: 200px; width: 100%">
+공지사항 내용입니다. 공지사항 내용입니다. 공지사항 내용입니다. ...
+      </textarea>
+    </form>
   </body>
 </html>

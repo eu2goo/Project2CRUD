@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>add</title>
+  </head>
+  <script>
+    function validateForm() {
+      let title = document.forms["newNoticeForm"]["title"].value;
+      let date = document.forms["newNoticeForm"]["date"].value;
+      let content = document.forms["newNoticeForm"]["noticeContent"].value;
+
+      // 제목 검사
+      if (title.trim().length === 0) {
+        alert("제목을 입력해주세요.");
+        return false;
+      }
+
+      // 날짜 검사
+      let datePattern = /^작성일자: \d{4}년 \d{1,2}월 \d{1,2}일$/;
+      if (!datePattern.test(date)) {
+        alert(
+          "날짜 형식이 올바르지 않습니다. (예: '작성일자: 2023년 9월 27일')"
+        );
+        return false;
+      }
+
+      // 내용 검사
+      if (content.trim().length === 0) {
+        alert("공지사항 내용을 입력해주세요.");
+        return false;
+      }
+
+      // 유효성 검사에 모두 통과하면 폼 제출
+      document.forms["newNoticeForm"].submit();
+    }
+  </script>
+  <link rel="stylesheet" href="mycss.css" />
+  <body>
+    <div class="header">
+      <h1>실전 프로젝트</h1>
+      <p>Project2 CRUD</p>
+    </div>
+
+    <div class="navbar">
+      <a href="#">Home</a>
+      <a href="#">Example</a>
+      <a href="#">About</a>
+    </div>
+    <div style="margin: 20px"></div>
+    <form class="newNoticeForm" action="saveNewNotice.php" method="post">
+      <input
+        type="text"
+        name="title"
+        placeholder="공지사항 제목을 입력하세요" />
+      <input type="text" name="date" placeholder="작성일자: YYYY년 MM월 DD일" />
+      <div class="buttonSection">
+        <button type="button" onclick="validateForm()">저장</button>
+      </div>
+      <textarea
+        name="noticeContent"
+        placeholder="공지사항 내용을 입력하세요"
+        style="height: 200px; width: 100%"></textarea>
+    </form>
+  </body>
+</html>

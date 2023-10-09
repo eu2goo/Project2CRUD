@@ -8,9 +8,9 @@
   </head>
   <link rel="stylesheet" href="mycss.css" />
   <script>
-   function deleteNotice(){
-        window.alert("게시물을 삭제할까요?");
-   }
+    function deleteNotice() {
+      window.alert("게시물을 삭제할까요?");
+    }
   </script>
   <body>
     <div class="header">
@@ -24,20 +24,23 @@
       <a href="#">About</a>
     </div>
     <div class="mainView" onclick="location.href=`view.html`">
-        <h2>공지사항 1입니다</h2>
-        <h5>작성일자: 2023년 9월 27일</h5>
-        <div class="buttonSection">
-            <button type="button" onclick="location.href=`edit.html`">수정</button>
-            <button onclick="deleteNotice()">삭제</button>
-        </div>
-        <div class="noticeContent" style="height: 200px">
-          공지사항 내용입니다. 공지사항 내용입니다. 공지사항 내용입니다.
-          공지사항 내용입니다. 공지사항 내용입니다. 공지사항 내용입니다.
-          공지사항 내용입니다. 공지사항 내용입니다. 공지사항 내용입니다.
-          공지사항 내용입니다. 공지사항 내용입니다. 공지사항 내용입니다.
-          공지사항 내용입니다. 공지사항 내용입니다. 공지사항 내용입니다.
-          공지사항 내용입니다. 공지사항 내용입니다. 공지사항 내용입니다.
-          공지사항 내용입니다.
-        </div>
+      <h2>공지사항 1입니다</h2>
+      <h5>작성일자: 2023년 9월 27일</h5>
+      <div class="buttonSection">
+        <button onclick="event.stopPropagation(); location.href='edit.html'">
+          수정
+        </button>
+        <button onclick="deleteNotice()">삭제</button>
+      </div>
+      <div class="noticeContent" style="height: 200px">
+        공지사항 내용입니다. 공지사항 내용입니다. 공지사항 내용입니다. 공지사항
+        내용입니다. 공지사항 내용입니다. 공지사항 내용입니다. 공지사항
+        내용입니다. 공지사항 내용입니다. 공지사항 내용입니다. 공지사항
+        내용입니다. 공지사항 내용입니다. 공지사항 내용입니다. 공지사항
+        내용입니다. 공지사항 내용입니다. 공지사항 내용입니다. 공지사항
+        내용입니다. 공지사항 내용입니다. 공지사항 내용입니다. 공지사항
+        내용입니다.
+      </div>
+    </div>
   </body>
 </html>
