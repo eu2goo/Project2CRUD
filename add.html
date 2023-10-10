@@ -6,32 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>edit</title>
   </head>
-  <link rel="stylesheet" href="example.css" />
+  <link rel="stylesheet" href="mycss.css" />
   <script>
-   function validateForm() {
-    let title = document.getElementById('noticeTitle').value;
-    let department = document.querySelector('select[name="department"]').value;
-    let context = document.getElementById('cardViewContext').value;
-
-    if (!title.trim() || !department || !context.trim()) {
-        window.alert("제목, 학부, 내용을 모두 입력해주세요!");
-        return false;
-    }
-
-    return window.confirm("수정한 내용을 저장할까요?");
-}
-  </script>
+    function validateForm() {
+     let title = document.getElementById('noticeTitle').value;
+     let department = document.querySelector('select[name="department"]').value;
+     let context = document.getElementById('cardViewContext').value;
+ 
+     if (!title.trim() || !department || !context.trim()) {
+         window.alert("제목, 학부, 내용을 모두 입력해주세요!");
+         return false;
+     }
+ 
+     return window.confirm("수정한 내용을 저장할까요?");
+ }
+   </script>
   <body>
     <div>
       <div id="header">
-        <p>22200296</p>
+        <p onclick="location.href=`index.html`">22200296</p>
       </div>
       <div id="cardViewBackground">
         <form id="cardView" action="submit_path_here" method="post" onsubmit="return validateForm();">
           <div id="cardViewTop">
             <br />
             학부 선택:
-            <select>
+            <select name="department">
               <option value="1">글로벌리더십학부</option>
               <option value="2">국제어문학부</option>
               <option value="3">경영경제학부</option>
@@ -60,7 +60,7 @@
             <div id="cardButton">
               <div id="editBtn">
                 <input type="submit" id="cardButtonLeft" value="Submit">
-            <button type="button" id="cardButtonRight" onclick="deleteNotice()">Cancel</button>
+            <button type="button" id="cardButtonRight" onclick="location.href=`index.html`">Cancel</button>
               </div>
             
             </div>
