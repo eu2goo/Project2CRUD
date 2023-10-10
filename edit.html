@@ -6,40 +6,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>edit</title>
   </head>
+  <link rel="stylesheet" href="example.css" />
   <script>
-    function deleteNotice() {
-      window.alert("게시물을 삭제할까요?");
+   function validateForm() {
+    let title = document.getElementById('noticeTitle').value;
+    let department = document.querySelector('select[name="department"]').value;
+    let context = document.getElementById('cardViewContext').value;
+
+    if (!title.trim() || !department || !context.trim()) {
+        window.alert("제목, 학부, 내용을 모두 입력해주세요!");
+        return false;
     }
+
+    return window.confirm("수정한 내용을 저장할까요?");
+}
   </script>
-  <link rel="stylesheet" href="mycss.css" />
   <body>
-    <div class="header">
-      <h1>실전 프로젝트</h1>
-      <p>Project2 CRUD</p>
-    </div>
-
-    <div class="navbar">
-      <a href="#">Home</a>
-      <a href="#">Example</a>
-      <a href="#">About</a>
-    </div>
-
-    <form class="mainView" action="saveChanges.php" method="post">
-      제목: <input type="text" name="title" value="공지사항 1입니다" />
-      <p>작성일자: 2023년 9월 27일</p>
-      수정일자:
-      <input type="datetime-local" name="date" />
-      <div class="buttonSection">
-        <button
-          type="submit"
-          onclick="event.stopPropagation(); location.href='view.html'">
-          저장
-        </button>
-        <button type="button" onclick="deleteNotice()">삭제</button>
+    <div>
+      <div id="header">
+        <p>22200296</p>
       </div>
-      <textarea name="noticeContent" style="height: 200px; width: 100%">
-공지사항 내용입니다. 공지사항 내용입니다. 공지사항 내용입니다. ...
-      </textarea>
-    </form>
+      <div id="cardViewBackground">
+        <form id="cardView" action="submit_path_here" method="post" onsubmit="return validateForm();">
+          <div id="cardViewTop">
+            <br />
+            학부 선택:
+            <select>
+              <option value="1">글로벌리더십학부</option>
+              <option value="2">국제어문학부</option>
+              <option value="3">경영경제학부</option>
+              <option value="4">법학부</option>
+              <option value="5">커뮤니케이션학부</option>
+              <option value="6">공간환경시스템공학부</option>
+              <option value="7">기계제어공학부</option>
+              <option value="8">콘텐츠융합디자인학부</option>
+              <option value="9">생명과학부</option>
+              <option value="10">전산전자공학부</option>
+              <option value="11">상담심리사회복지학부</option>
+              <option value="12">ICT창업학부</option>
+            </select>
+            제목:
+            <input
+              id="noticeTitle"
+              type="text"
+              value="전산전자공학부 공지사항입니다 안녕하세요 전산전자공학부입니다" />
+          </div>
+          <div id="cardViewBottom">
+            <textarea id="cardViewContext">
+              [전산전자공학부 공지] 📢 전산전자공학부 학생 여러분께, 안녕하세요,
+              전산전자공학부 사무실입니다.
+             1. **특별 세미나 안내** - 주제: "최신 AI 기술 동향 및
+              전자공학의 미래" - 일시: 2023년 11월 3일 (금) 오후 3시 - 장소:
+              공학관 B동 1층 대강의실 - 강연자: 박영훈 박사 (XYZ 기술연구소) -
+              참가 희망자는 10월 30일까지 사무실에 연락하여 주시기 바랍니다.
+             2. **장학금 지급 관련 안내** - 2023년 2학기 장학금 지급
+              대상자 명단이 홈페이지에 게시되었습니다. - 장학금은 11월 10일에
+              학생들의 등록금 계좌로 입금될 예정입니다. 3. **전공 도서관
+              이용 안내** - 최근 도서관에 새로 도입된 전공 서적 및 전자 자료들이
+              많이 준비되었습니다. - 학습에 필요한 자료나 서적은 도서관
+              홈페이지에서 검색 및 예약이 가능합니다. 4. **중간고사 일정**
+              - 중간고사 기간: 2023년 10월 20일 ~ 10월 27일 - 과목별 시험 일정
+              및 장소는 각 교과목 담당 교수님께서 공지해주실 예정입니다.
+              마지막으로, 학업에 있어서 어려움이나 궁금한 점이 있으시다면
+              언제든지 사무실에 연락하셔서 상담 받으시기 바랍니다. 여러분의
+              노력에 항상 응원의 마음을 담아 응원하겠습니다. 감사합니다.
+              전산전자공학부 사무실 올림.
+            </textarea>
+            <br/>
+            <label for="author">
+              작성자: </label>
+            <input type="text" id="author" name="author" value="익명">
+            <div id="cardButton">
+              <div id="editBtn">
+                <input type="submit" id="cardButtonLeft" value="Submit">
+            <button type="button" id="cardButtonRight" onclick="deleteNotice()">Cancel</button>
+              </div>
+              <p>9ms</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

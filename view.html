@@ -6,40 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>view</title>
   </head>
-  <link rel="stylesheet" href="mycss.css" />
+  <link rel="stylesheet" href="example.css" />
   <script>
     function deleteNotice() {
-      window.alert("게시물을 삭제할까요?");
+      let deleteNotice = window.confirm("게시물을 삭제할까요?");
+      if (deleteNotice) {
+        window.alert("해당 공지사항을 삭제하였습니다.");
+        window.location.href = `newindex.html`;
+      }
     }
   </script>
   <body>
-    <div class="header">
-      <h1>실전 프로젝트</h1>
-      <p>Project2 CRUD</p>
-    </div>
-
-    <div class="navbar">
-      <a href="#">Home</a>
-      <a href="#">Example</a>
-      <a href="#">About</a>
-    </div>
-    <div class="mainView" onclick="location.href=`view.html`">
-      <h2>공지사항 1입니다</h2>
-      <h5>작성일자: 2023년 9월 27일</h5>
-      <div class="buttonSection">
-        <button onclick="event.stopPropagation(); location.href='edit.html'">
-          수정
-        </button>
-        <button onclick="deleteNotice()">삭제</button>
+    <div>
+      <div id="header">
+        <p>22200296</p>
       </div>
-      <div class="noticeContent" style="height: 200px">
-        공지사항 내용입니다. 공지사항 내용입니다. 공지사항 내용입니다. 공지사항
-        내용입니다. 공지사항 내용입니다. 공지사항 내용입니다. 공지사항
-        내용입니다. 공지사항 내용입니다. 공지사항 내용입니다. 공지사항
-        내용입니다. 공지사항 내용입니다. 공지사항 내용입니다. 공지사항
-        내용입니다. 공지사항 내용입니다. 공지사항 내용입니다. 공지사항
-        내용입니다. 공지사항 내용입니다. 공지사항 내용입니다. 공지사항
-        내용입니다.
+      <div id="cardViewBackground">
+        <div id="cardView">
+          <div id="cardViewTop">
+            전산전자공학부
+            <br />
+            <input id="noticeTitle">
+              전산전자공학부 공지사항입니다 안녕하세요 전산전자공학부입니다
+            </p>
+          </div>
+          <div id="cardViewBottom">
+            <p id="cardViewContext">
+              [전산전자공학부 공지] 📢 전산전자공학부 학생 여러분께, 안녕하세요,
+              전산전자공학부 사무실입니다.
+              <br />1. **특별 세미나 안내** - 주제: "최신 AI 기술 동향 및
+              전자공학의 미래" - 일시: 2023년 11월 3일 (금) 오후 3시 - 장소:
+              공학관 B동 1층 대강의실 - 강연자: 박영훈 박사 (XYZ 기술연구소) -
+              참가 희망자는 10월 30일까지 사무실에 연락하여 주시기 바랍니다.
+              <br />2. **장학금 지급 관련 안내** - 2023년 2학기 장학금 지급
+              대상자 명단이 홈페이지에 게시되었습니다. - 장학금은 11월 10일에
+              학생들의 등록금 계좌로 입금될 예정입니다. <br />3. **전공 도서관
+              이용 안내** - 최근 도서관에 새로 도입된 전공 서적 및 전자 자료들이
+              많이 준비되었습니다. - 학습에 필요한 자료나 서적은 도서관
+              홈페이지에서 검색 및 예약이 가능합니다. <br />4. **중간고사 일정**
+              - 중간고사 기간: 2023년 10월 20일 ~ 10월 27일 - 과목별 시험 일정
+              및 장소는 각 교과목 담당 교수님께서 공지해주실 예정입니다.
+              <br />마지막으로, 학업에 있어서 어려움이나 궁금한 점이 있으시다면
+              언제든지 사무실에 연락하셔서 상담 받으시기 바랍니다. 여러분의
+              노력에 항상 응원의 마음을 담아 응원하겠습니다. 감사합니다.
+              전산전자공학부 사무실 올림.
+            </p>
+            <div id="cardButton">
+              <div id="editBtn">
+                <p
+                  id="cardButtonLeft"
+                  onclick="event.stopPropagation(); location.href='edit.html'">
+                  Edit
+                </p>
+                <p id="cardButtonRight" onclick="deleteNotice()">Delete</p>
+              </div>
+              <p>9ms</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
